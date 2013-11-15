@@ -84,7 +84,7 @@ class FileContainersController < ApplicationController
     @file_container.destroy
 
     respond_to do |format|
-      format.html { redirect_to file_containers_ur, notice: 'File was deleted updated.'  }
+      format.html { redirect_to file_containers_url, notice: 'File was deleted updated.'  }
       format.json { head :no_content }
     end
   end
