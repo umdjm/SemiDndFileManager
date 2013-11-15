@@ -30,7 +30,9 @@ class FileContainersController < ApplicationController
   # GET /file_containers/new
   # GET /file_containers/new.json
   def new
+
     @file_container = FileContainer.new
+    @file_container.page = params[:page]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -50,7 +52,7 @@ class FileContainersController < ApplicationController
 
     respond_to do |format|
       if @file_container.save
-        format.html { redirect_to @file_container, notice: 'File container was successfully created.' }
+        format.html { redirect_to file_containers_url, notice: 'File was successfully uploaded.' }
         format.json { render json: @file_container, status: :created, location: @file_container }
       else
         format.html { render action: "new" }
@@ -66,7 +68,7 @@ class FileContainersController < ApplicationController
 
     respond_to do |format|
       if @file_container.update_attributes(params[:file_container])
-        format.html { redirect_to @file_container, notice: 'File container was successfully updated.' }
+        format.html { redirect_to file_containers_url, notice: 'File was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -82,7 +84,7 @@ class FileContainersController < ApplicationController
     @file_container.destroy
 
     respond_to do |format|
-      format.html { redirect_to file_containers_url }
+      format.html { redirect_to file_containers_ur, notice: 'File was deleted updated.'  }
       format.json { head :no_content }
     end
   end
