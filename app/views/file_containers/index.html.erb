@@ -1,0 +1,23 @@
+<h1><%= @page %></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Download</th>
+    <th>Delete</th>
+  </tr>
+
+<% @file_containers.each do |file_container| %>
+  <tr>
+    <td><%= file_container.name %></td>
+    <td><%= file_container.description %></td>
+    <td><%= link_to "Download",file_container.s3_file.url(:original, false) %></td>
+    <td><%= link_to 'Delete', file_container, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Upload File', new_file_container_path %>

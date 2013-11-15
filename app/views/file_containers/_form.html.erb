@@ -1,0 +1,36 @@
+<%= form_for(@file_container) do |f| %>
+  <% if @file_container.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@file_container.errors.count, "error") %> prohibited this file_container from being saved:</h2>
+
+      <ul>
+      <% @file_container.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+    <div class="field">
+      <%= f.label :s3_file %><br />
+      <%= f.file_field :s3_file %>
+    </div>
+
+    <div class="field">
+      <%= f.label :page %><br />
+      <%= f.text_field :page %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
