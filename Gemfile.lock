@@ -59,6 +59,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     multi_json (1.8.2)
+    newrelic_rpm (3.6.0.83)
     nokogiri (1.5.10)
     paperclip (3.5.2)
       activemodel (>= 3.0.0)
@@ -120,6 +121,7 @@ DEPENDENCIES
   aws-sdk
   coffee-rails (~> 3.2.1)
   jquery-rails
+  newrelic_rpm
   paperclip
   pg
   rails (= 3.2.13)
